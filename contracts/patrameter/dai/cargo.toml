@@ -1,8 +1,8 @@
 [package]
-name = "erc20_issue"
+name = "dai"
 version = "0.1.0"
-authors = ["[CertusHack] <[support@certushack.atlassian.net]>"]
-edition = "2024"
+authors = ["Patract Labs <tyler@patract.io>"]
+edition = "2018"
 
 [dependencies]
 ink_primitives = { version = "3.0.0-rc2", git = "https://github.com/paritytech/ink", default-features = false }
@@ -15,11 +15,10 @@ ink_prelude = { version = "3.0.0-rc2", git = "https://github.com/paritytech/ink"
 scale = { package = "parity-scale-codec", version = "3.0.0", default-features = false, features = ["derive"] }
 scale-info = { version = "0.6", default-features = false, features = ["derive"], optional = true }
 
-erc20-trait = { git = "https://github.com/patractlabs/metis", default-features = false, features = ["ink-as-dependency"] }
-ownership = { version = "0.1.0", git = "https://github.com/patractlabs/metis", default-features = false }
+funty = "=1.1"
 
 [lib]
-name = "erc20_issue"
+name = "dai"
 path = "lib.rs"
 crate-type = [
     # Used for normal contract Wasm blobs.
@@ -41,8 +40,5 @@ std = [
     "scale/std",
     "scale-info",
     "scale-info/std",
-
-    "erc20-trait/std",
-    "ownership/std",
 ]
 ink-as-dependency = []
